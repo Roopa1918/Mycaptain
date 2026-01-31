@@ -1,0 +1,13 @@
+#list 1
+numbers = [12, -7, 5, 64, -14]
+
+for num in numbers:
+    if num > 0:
+        print(num) 
+
+#list 2
+numbers = [ 12, 14, -95, 3]
+
+for num in numbers:
+    if num > 0:
+        print(num)
