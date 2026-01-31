@@ -1,0 +1,31 @@
+# MNIST Random Image Classifier using CSV
+
+# Step 1: Import required libraries
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import random
+
+# Step 2: Load MNIST CSV file
+# Make sure 'mnist.csv' is in the same folder as this file
+data = pd.read_csv("mnist.csv")
+
+# Step 3: Separate labels and image data
+labels = data.iloc[:, 0].values        # First column = labels
+images = data.iloc[:, 1:].values       # Remaining columns = pixels
+
+# Step 4: Select a random image
+index = random.randint(0, len(images) - 1)
+
+# Reshape image to 28x28
+image = images[index].reshape(28, 28)
+actual_label = labels[index]
+
+# Step 5: Random prediction (0–9)
+predicted_label = random.randint(0, 9)
+
+# Step 6: Display image and prediction
+plt.imshow(image, cmap="gray")
+plt.title(f"Actual Label: {actual_label} | Predicted Label: {predicted_label}")
+plt.axis("off")
+plt.show()
